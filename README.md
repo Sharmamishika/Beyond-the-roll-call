@@ -1,4 +1,4 @@
-# face-attendance--system
+# FACE-RECOGNITION-BASED-ATTENDANCE-MANAGEMENT-SYSTEM
 PROJECT ON FACE RECOGINTION BASED ATTENDANCE MANAGEMENT SYSTEM WHICH IS CALLED "BEYOND THE ROLL CALL" FULL BASED ON PYTHON.
 
 This project focuses on managing attendance through face recognition and can be used by any institution, school or office. It is a desktop application which does not require network.
@@ -7,22 +7,26 @@ DeepFace library is used for recognizing faces and FaceNet512 model is used. Mod
 
 Following are the libraries (dependencies) used:
 
-cv2 (OpenCV): Used for video capture, face detection, image manipulation, and displaying the webcam feed.
-pickle: Used to load and save serialized data (like embeddings, roll numbers, and names) to a file. This allows the system to persist face embeddings between sessions.
-pandas: Used for handling attendance data in the form of a DataFrame. It allows easy manipulation of data, such as adding attendance records, viewing them, and exporting them to a CSV file.
-datetime: Used to record the timestamp when a student’s attendance is marked. It helps format the current date and time when saving attendance.
-deepface: A deep learning library for face recognition. It provides pre-trained models and methods to extract face embeddings and compare them to identify known faces.
-numpy: Used for numerical operations like calculating the Euclidean distance between face embeddings to match faces. It handles arrays efficiently.
-os: Used to interact with the operating system. It helps check the existence of files and directories and manage file paths.
-tkinter: A Python library for creating graphical user interfaces (GUIs). It provides windows, buttons, labels, and other widgets to create interactive elements for the attendance system.
-PIL (Pillow): Used for image processing. In this case, it is used to resize and display background images in the Tkinter GUI.
-threading: Allows the webcam to run in a separate thread, enabling the GUI to remain responsive while the webcam is active.
-tkinter.filedialog: Used to open file dialog boxes, allowing the user to select a folder to save the exported attendance CSV file.
+  1.cv2 (OpenCV): Used for video capture, face detection, image manipulation, and displaying the webcam feed.
+  2.pickle: Used to load and save serialized data (like embeddings, roll numbers, and names) to a file. This allows the system to persist face embeddings between sessions.
+  3.pandas: Used for handling attendance data in the form of a DataFrame. It allows easy manipulation of data, such as adding attendance records, viewing them, and exporting them to a CSV file.
+  4.datetime: Used to record the timestamp when a student’s attendance is marked. It helps format the current date and time when saving attendance.
+  5.deepface: A deep learning library for face recognition. It provides pre-trained models and methods to extract face embeddings and compare them to identify known faces.
+  6.numpy: Used for numerical operations like calculating the Euclidean distance between face embeddings to match faces. It handles arrays efficiently.
+  7.os: Used to interact with the operating system. It helps check the existence of files and directories and manage file paths.
+  8.tkinter: A Python library for creating graphical user interfaces (GUIs). It provides windows, buttons, labels, and other widgets to create interactive elements for the attendance system.
+  9.PIL (Pillow): Used for image processing. In this case, it is used to resize and display background images in the Tkinter GUI.
+  10.threading: Allows the webcam to run in a separate thread, enabling the GUI to remain responsive while the webcam is active.
+     tkinter.
+  11.filedialog: Used to open file dialog boxes, allowing the user to select a folder to save the exported attendance CSV file.
+  
 Following are the functionalities of the system:
 
-Start camera: This button will start the webcam and detected faces will be recognized by the DeepFace and FaceNet512 showing their roll no and name. If the faces are not detected it will show unknown.
-Stop camera: After recognizing face, to stop the camera, we have to trigger the button stop camera to stop the webcam.
-View Attendance: This button will show us the attendance that could be daily, weekly or monthly along with the name, roll no and the timestamp at which the face was recognized.
-Export Attendance: This will export the attendance recorded in a csv file format to any selected folder.
-Clear Attendance: This button will simply clear all the recorded attendance.
-Register New Face: This will register a new face. The person have to enter the roll no and name and then the webcam will be started to record the face so that the model can be trained on that face and can be converted to an embedding which would be saved in the pickle file. The person have to press "c" key to capture the face. After that, the face will be recognized when starting the camera.
+  1.Start camera: This button will start the webcam and detected faces will be recognized by the DeepFace and FaceNet512 showing their roll no and name. If the faces are not detected it will show unknown.
+  2.Stop camera: After recognizing face, to stop the camera, we have to trigger the button stop camera to stop the webcam.
+  3.View Attendance: This button will show us the attendance that could be daily, weekly or monthly along with the name, roll no and the timestamp at which the face was recognized.
+  4.Export Attendance: This will export the attendance recorded in a csv file format to any selected folder.
+  5.Clear Attendance: This button will simply clear all the recorded attendance.
+    Register 
+  6.New Face: This will register a new face. The person have to enter the roll no and name and then the webcam will be started to record the face so that the model can be trained on that face and can be 
+    converted to an embedding which would be saved in the pickle file. The person have to press "c" key to capture the face. After that, the face will be recognized when starting the camera.
