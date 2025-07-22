@@ -249,15 +249,18 @@ def create_ui():
     window.title("Face Recognition Attendance System")
     window.geometry("500x400")
     window.configure(bg="#f2f2f2")
-    bg_image_original = Image.open(r"C:\Users\Silky\OneDrive\Desktop\MINOR 2\Untitled design (1).png")
-    bg_resized = bg_image_original.resize((500, 400), Image.ANTIALIAS)
+    bg_image_original = Image.open(r"D:\3RD YEAR\6th sem\minor II\FACE-RECOGNITION-BASED-ATTENDANCE-MANAGEMENT-SYSTEM-main\FACE-RECOGNITION-BASED-ATTENDANCE-MANAGEMENT-SYSTEM-main\background.png")
+    bg_resized = bg_image_original.resize((500, 400), Image.Resampling.LANCZOS)
     bg_photo = ImageTk.PhotoImage(bg_resized)
+
     background_label = tk.Label(window, image=bg_photo)
-    background_label.image = bg_photo  
+    background_label.image = bg_photo
     background_label.place(relwidth=1, relheight=1)
 
+  
+
     def update_bg(event):
-        resized_bg = bg_image_original.resize((event.width, event.height), Image.ANTIALIAS)
+        resized_bg = bg_image_original.resize((event.width, event.height), Image.Resampling.LANCZOS)
         bg_photo_resized = ImageTk.PhotoImage(resized_bg)
         background_label.config(image=bg_photo_resized)
         background_label.image = bg_photo_resized
@@ -298,4 +301,3 @@ def create_ui():
 
 if __name__ == "__main__":
     create_ui()
-
