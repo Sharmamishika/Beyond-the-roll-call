@@ -2,7 +2,7 @@ import os
 import pickle
 from deepface import DeepFace
 
-faces_folder = r"C:\Users\Silky\OneDrive\Desktop\MINOR 2\Faces\Faces"  
+faces_folder = r"D:\3RD YEAR\6th sem\minor II\FACE-RECOGNITION-BASED-ATTENDANCE-MANAGEMENT-SYSTEM-main\FACE-RECOGNITION-BASED-ATTENDANCE-MANAGEMENT-SYSTEM-main\faces"  
 output_file = "trained_embeddings.pkl"  
 
 embeddings = []
@@ -47,6 +47,12 @@ data = {
     "roll_numbers": roll_numbers,
     "names": names
 }
+
+with open(output_file, "wb") as f:
+    pickle.dump(data, f)
+
+print(f"\n🎯 Training complete! Embeddings saved to '{output_file}'")
+
 
 with open(output_file, "wb") as f:
     pickle.dump(data, f)
