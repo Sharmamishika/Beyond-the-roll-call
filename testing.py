@@ -21,7 +21,13 @@ stored_rolls = np.array(data["roll_numbers"])
 label_encoder = LabelEncoder()
 encoded_labels = label_encoder.fit_transform(stored_names)
 
-test_folder = r"C:\Users\Silky\OneDrive\Desktop\MINOR 2\TestImages"
+test_folder = r"D:\3RD YEAR\6th sem\minor II\FACE-RECOGNITION-BASED-ATTENDANCE-MANAGEMENT-SYSTEM-main\FACE-RECOGNITION-BASED-ATTENDANCE-MANAGEMENT-SYSTEM-main\TestImages"
+
+if not os.path.exists(test_folder):
+    os.makedirs(test_folder)
+    print(f"[info] '{test_folder}' folder created. Please add test images and rerun the script.")
+    exit()
+
 
 y_true = []
 y_pred = []
@@ -51,21 +57,22 @@ for file in os.listdir(test_folder):
 
             y_true.append(true_name)
             y_pred.append(pred_name)
-
-            print(f"✅ Tested {file}: True={true_name}, Pred={pred_name}")
+            
+            print(f"[OK] Tested {file}: True={true_name}, Pred={pred_name}")
 
         except Exception as e:
-            print(f"⚠️ Could not process {file}: {e}")
+            print(f"[WARN] Could not process {file}: {e}")
+
 
 # Classification Metrics
-print("\n📊 Classification Report:")
+print("\n Classification Report:")
 print(classification_report(y_true, y_pred, zero_division=0))
 
 print("Confusion Matrix:")
 print(confusion_matrix(y_true, y_pred, labels=label_encoder.classes_))
 
 accuracy = accuracy_score(y_true, y_pred)
-print(f"✅ Accuracy: {accuracy * 100:.2f}%")
+print(f" Accuracy: {accuracy * 100:.2f}%")
 
 # Confusion Matrix
 cm_labels = sorted(set(y_true + y_pred))
@@ -75,6 +82,11 @@ cm = confusion_matrix(y_true, y_pred, labels=cm_labels)
 plt.figure(figsize=(8, 6))
 sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=cm_labels, yticklabels=cm_labels)
 plt.title("Confusion Matrix")
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
+plt.tight_layout()
+plt.show()
+
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.tight_layout()
