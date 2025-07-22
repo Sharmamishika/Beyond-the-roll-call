@@ -3,8 +3,8 @@ import cv2
 import numpy as np
 
 # Paths
-source_folder = r"C:\Users\Silky\OneDrive\Desktop\MINOR 2\Faces\Faces"
-test_folder = r"C:\Users\Silky\OneDrive\Desktop\MINOR 2\TestImages"
+source_folder = r"D:\3RD YEAR\6th sem\minor II\FACE-RECOGNITION-BASED-ATTENDANCE-MANAGEMENT-SYSTEM-main\FACE-RECOGNITION-BASED-ATTENDANCE-MANAGEMENT-SYSTEM-main\faces"
+test_folder = r"D:\3RD YEAR\6th sem\minor II\FACE-RECOGNITION-BASED-ATTENDANCE-MANAGEMENT-SYSTEM-main\FACE-RECOGNITION-BASED-ATTENDANCE-MANAGEMENT-SYSTEM-main\TestImages"
 
 os.makedirs(test_folder, exist_ok=True)
 
@@ -44,4 +44,7 @@ for file in os.listdir(source_folder):
                 new_filename = f"{base_name}_aug{i+1}.jpg"
                 cv2.imwrite(os.path.join(test_folder, new_filename), aug)
 
-print(f"✅ Test images saved to: {test_folder}")
+print(f"Test images saved to: {test_folder}")
+
+
+
